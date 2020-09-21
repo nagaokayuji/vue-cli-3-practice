@@ -1,6 +1,9 @@
 <template>
   <div>
-    <LikeHeader></LikeHeader>
+    <LikeHeader headerText="トータル">
+      <h1>なにか</h1>
+      <h2>{{number}}</h2>
+    </LikeHeader>
     <p>TOTAL NICE</p>
     <p>{{ number }}</p>
     <LikeNumber v-bind:number="number" v-on:my-click="number = $event"></LikeNumber>
