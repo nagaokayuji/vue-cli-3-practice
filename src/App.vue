@@ -3,8 +3,10 @@
     <LikeHeader></LikeHeader>
     <p>TOTAL NICE</p>
     <p>{{ number }}</p>
-    <LikeNumber v-bind:number="number"></LikeNumber>
-    <LikeNumber :number="number"></LikeNumber>
+    <LikeNumber v-bind:number="number" v-on:my-click="number = $event"></LikeNumber>
+    <LikeNumber v-bind:number="number" v-on:my-click="number = $event"></LikeNumber>
+    <LikeNumber v-bind:number="number" v-on:my-click="number = $event"></LikeNumber>
+    <LikeNumber v-bind:number="number" v-on:my-click="number = $event"></LikeNumber>
   </div>
 </template>
 <script>
@@ -14,7 +16,7 @@ import LikeHeader from "./components/LikeHeader.vue";
 export default {
   data() {
     return {
-      number: 15,
+      number: 100,
     };
   },
   components: {

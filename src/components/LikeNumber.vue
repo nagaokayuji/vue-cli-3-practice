@@ -2,21 +2,26 @@
   <div>
     <p>nice ({{number / 2}})</p>
     <button @click="increment">+1</button>
+    <p>{{hogehoge}}</p>
   </div>
 </template>
 
 <script>
 export default {
   // data: function () { ← 以前の書き方
-  props: ["number"],
+  props: {
+    number: { type: Number, default: 333 },
+    hogehoge: { type: String, default: "hoge" },
+  },
   // data() {
   //   return {
   //     number: 0,
   //   };
   // },
+
   methods: {
     increment() {
-      this.number++;
+      this.$emit("my-click", this.number + 1);
     },
   },
 };
