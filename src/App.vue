@@ -8,12 +8,14 @@
     <p>{{ number }}</p>
     <LikeNumber v-bind:number="number" v-on:my-click="number = $event"></LikeNumber>
     <EventTitle v-model="eventData.title"></EventTitle>
+    <Home></Home>
   </div>
 </template>
 <script>
 import LikeHeader from "./components/LikeHeader.vue";
 // import LikeNumber from "./components/LikeNumber.vue";
 import EventTitle from "./components/EventTitle.vue";
+import Home from "./components/Home.vue";
 
 export default {
   data() {
@@ -25,6 +27,7 @@ export default {
   components: {
     LikeHeader,
     EventTitle,
+    Home,
     // LikeNumber,
   },
 };
