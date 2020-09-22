@@ -104,10 +104,10 @@ export default {
 
 <style scoped>
 .circle {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   margin: auto;
-  border-radius: 100px;
+  border-radius: 50px;
   background-color: deeppink;
 }
 
@@ -132,7 +132,7 @@ export default {
 }
 .fade-leave-active {
   /* 消える時のトランジションの状態 */
-  transition: opacity 1s;
+  transition: opacity 3s;
   position: absolute;
   width: 200px;
 }
@@ -166,7 +166,7 @@ export default {
 .main {
   width: 70%;
   margin: auto;
-  padding-top: 5rem;
+  padding-top: 10rem;
   text-align: center;
 }
 </style>
