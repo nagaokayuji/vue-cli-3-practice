@@ -7,23 +7,24 @@
     <p>TOTAL NICE</p>
     <p>{{ number }}</p>
     <LikeNumber v-bind:number="number" v-on:my-click="number = $event"></LikeNumber>
-    <input id="title" type="text" v-model="eventData.title" />
-    <p>{{eventData.title}}</p>
+    <EventTitle v-model="eventData.title"></EventTitle>
   </div>
 </template>
 <script>
 import LikeHeader from "./components/LikeHeader.vue";
 // import LikeNumber from "./components/LikeNumber.vue";
+import EventTitle from "./components/EventTitle.vue";
 
 export default {
   data() {
     return {
       number: 100,
-      eventData: { title: "hoge" },
+      eventData: { title: "default", maxNumber: 5 },
     };
   },
   components: {
     LikeHeader,
+    EventTitle,
     // LikeNumber,
   },
 };
