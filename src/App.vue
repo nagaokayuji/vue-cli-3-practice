@@ -2,7 +2,7 @@
   <div class="main">
     <button @click="myAnimation = 'slide'">Slide</button>
     <button @click="myAnimation = 'fade'">Fade</button>
-    <p>{{myAnimation}}</p>
+    <p>{{ myAnimation }}</p>
     <br />
     <button @click="add">追加</button>
     <ul style="width: 200px; margin: auto;">
@@ -12,14 +12,23 @@
           v-for="(number, index) in numbers"
           :key="number"
           @click="remove(index)"
-        >{{ number }}</li>
+        >
+          {{ number }}
+        </li>
       </transition-group>
     </ul>
     <br />
     <button @click="show = !show">切り替え</button>
     <br />
     <br />
-    <transition :css="false" @before-enter="beforeEnter" @enter="enter" @leave="leave">
+    <br />
+    <br />
+    <transition
+      :css="false"
+      @before-enter="beforeEnter"
+      @enter="enter"
+      @leave="leave"
+    >
       <div class="circle" v-if="show"></div>
     </transition>
     <br />
@@ -32,7 +41,11 @@
       <p v-if="show" key="bye">さよなら</p>
       <p v-else key="hello">こんにちは</p>
     </transition>
-    <transition enter-active-class="animated bounce" leave-active-class="animated shake" appear>
+    <transition
+      enter-active-class="animated bounce"
+      leave-active-class="animated shake"
+      appear
+    >
       <p v-if="show">hello</p>
     </transition>
     <transition :name="myAnimation" appear>
