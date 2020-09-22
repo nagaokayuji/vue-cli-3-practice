@@ -14,37 +14,37 @@ const HeaderUsers = () =>
 Vue.use(Router);
 
 export default new Router({
-  mode: "history",
+  mode: "history", // URLの#が消える
   routes: [
     {
       path: "/",
       components: {
         default: Home,
-        header: HeaderHome
-      }
+        header: HeaderHome,
+      },
     },
     {
       path: "/users/:id",
       components: {
         default: Users,
-        header: HeaderUsers
+        header: HeaderUsers,
       },
       props: {
         default: true,
-        header: false
+        header: false,
       },
       children: [
         { path: "posts", component: UsersPosts },
-        { path: "profile", component: UsersProfile, name: "users-id-profile" }
-      ]
+        { path: "profile", component: UsersProfile, name: "users-id-profile" },
+      ],
     },
     {
       path: "*",
-      redirect: "/"
-    }
+      redirect: "/",
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       this.app.$root.$once("triggerScroll", () => {
         let position = { x: 0, y: 0 };
         if (savedPosition) {
@@ -52,11 +52,11 @@ export default new Router({
         }
         if (to.hash) {
           position = {
-            selector: to.hash
+            selector: to.hash,
           };
         }
         resolve(position);
       });
     });
-  }
+  },
 });
