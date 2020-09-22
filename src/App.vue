@@ -7,9 +7,8 @@
     <p>TOTAL NICE</p>
     <p>{{ number }}</p>
     <LikeNumber v-bind:number="number" v-on:my-click="number = $event"></LikeNumber>
-    <LikeNumber v-bind:number="number" v-on:my-click="number = $event"></LikeNumber>
-    <LikeNumber v-bind:number="number" v-on:my-click="number = $event"></LikeNumber>
-    <LikeNumber v-bind:number="number" v-on:my-click="number = $event"></LikeNumber>
+    <input id="title" type="text" v-model="eventData.title" />
+    <p>{{eventData.title}}</p>
   </div>
 </template>
 <script>
@@ -20,6 +19,7 @@ export default {
   data() {
     return {
       number: 100,
+      eventData: { title: "hoge" },
     };
   },
   components: {
