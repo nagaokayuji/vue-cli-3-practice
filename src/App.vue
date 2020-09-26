@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <h3>掲示板に投稿する</h3>
+    <h3>はわい掲示板</h3>
     <label for="name">ニックネーム：</label>
     <input id="name" type="text" v-model="name" />
     <br /><br />
     <label for="comment">コメント：</label>
     <textarea id="comment" v-model="comment"></textarea>
     <br /><br />
-    <button @click="createComment">コメントをサーバーに送る</button>
+    <button @click="createComment">投稿</button>
     <h2>掲示板</h2>
     <div v-for="post in posts" :key="post.name">
       <br />
