@@ -1,4 +1,4 @@
-# spa-vuejs
+# vuejs-http
 
 ## Project setup
 ```
