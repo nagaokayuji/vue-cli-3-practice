@@ -14,7 +14,7 @@ const HeaderUsers = () =>
 Vue.use(Router);
 
 export default new Router({
-  mode: "history", // URLの#が消える
+  mode: "history",
   routes: [
     {
       path: "/",
@@ -40,7 +40,7 @@ export default new Router({
     },
     {
       path: "*",
-      redirect: "/", //リダイレクト
+      redirect: "/",
     },
   ],
   scrollBehavior(to, from, savedPosition) {
