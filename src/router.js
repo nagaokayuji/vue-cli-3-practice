@@ -40,7 +40,7 @@ export default new Router({
     },
     {
       path: "*",
-      redirect: "/",
+      redirect: "/", //リダイレクト
     },
   ],
   scrollBehavior(to, from, savedPosition) {
